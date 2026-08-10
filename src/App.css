@@ -1,7 +1,21 @@
-.App {
-  text-align: center;
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Растягивает страницу на всю высоту экрана */
+  overflow-x: hidden;
+  background-color: #F0F8FF; /* Цвет фона на весь экран */
 }
 
+.App {
+  text-align: center;
+  background-color: #F0F8FF;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

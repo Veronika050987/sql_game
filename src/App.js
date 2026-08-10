@@ -1,23 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import SqlGame from './SqlGame';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <main>
+        <SqlGame /> 
+      </main>
+
+      <footer>
+        <p>© 2026 Изучаем SQL весело</p>
+      </footer>
     </div>
   );
 }
