@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/sql_game/static/css/main.ed4606d5.css",
+    "main.js": "/sql_game/static/js/main.36c59c05.js",
+    "static/js/453.0bb4956c.chunk.js": "/sql_game/static/js/453.0bb4956c.chunk.js",
+    "index.html": "/sql_game/index.html",
+    "main.ed4606d5.css.map": "/sql_game/static/css/main.ed4606d5.css.map",
+    "main.36c59c05.js.map": "/sql_game/static/js/main.36c59c05.js.map",
+    "453.0bb4956c.chunk.js.map": "/sql_game/static/js/453.0bb4956c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ed4606d5.css",
+    "static/js/main.36c59c05.js"
+  ]
+}
