@@ -1,7 +1,33 @@
 import React, { useState } from 'react';
 import './SqlGame.css';
 
+
+const translations = {
+  "Уровень 1: DDL" : "Level 1: DDL",
+  "Уровень 2: DML" : "Level 2: DML",
+  "Уровень 3: DQL" : "Level 3: DQL",
+  "Режим строителя: DDL (создаём гараж для машинок)" : "Builder mode: DDL (create cars garage)",
+  "Твоя задача - управлять зданиями. Построй гараж для будущих машин!" : "Your task is to manage the buildings. Build a garage for the future cars.",
+  "Здесь пусто. Нажми CREATE, чтобы построить гараж!" : "Empty! Push CREATE  to build a garage!",
+  "Режим управления: DML (управляем тем, что внутри)" : "Manager mode: DML (manage inside the garage)",
+  "Гараж готов! Теперь будем командовать машинками внутри него." : "The garage is ready. Now we will manage the cars inside it.",
+  "Внутри твоего гаража:" : "Inside your garage",
+  "Гараж пуст. Нажми INSERT, чтобы припарковать машинку!" : "The garage is empty. Push INSERT to park a car!",
+  "Ой! Сначала вернись на Уровень 1 и создай (CREATE) гараж!" : "Oups! Return into level 1 and create (CREATE) a garage!",
+  "Режим поиска: DQL (ищем объекты в гараже)" : "Search mode in the garage: DDL (search the objects in the garage)",
+  "ГАРАЖ" : "GARAGE",
+  "SELECT * FROM garage (Показать всё)" : "SELECT * FROM garage (Show all)",
+  "SELECT FROM garage WHERE color = 'синий'" : "SELECT FROM garage WHERE color = 'blue'",
+  "Используй команду SELECT и мощный фонарик, чтобы отфильтровать нужные объекты." : "Use a SELECT command and a powerful lantern to filter useful objects.",
+  "Сначала нужно построить гараж на Уровне 1." : "At first you need to build a garage on the level 1."
+
+}
+
 export default function SqlGame() {
+  const [isEnglish, setIsEnglish] = useState(false);
+
+  const t = (text) => (isEnglish && translations[text] ? translations[text] : text);
+
   const [level, setLevel] = useState(1); // Текущий уровень (1, 2, 3)
   
   // Состояния для Уровня 1 (DDL)
@@ -73,11 +99,14 @@ export default function SqlGame() {
 
   return (
     <div className="sql-game">
+      <button className='language' onClick={() => setIsEnglish(!isEnglish)}>
+                {isEnglish ? "Русский" : "English"}
+            </button>
       {/* Шапка с переключением уровней */}
       <div className="level-tabs">
-        <button className={level === 1 ? 'active' : ''} onClick={() => setLevel(1)}>🧱 Уровень 1: DDL</button>
-        <button className={level === 2 ? 'active' : ''} onClick={() => setLevel(2)}>🚐 Уровень 2: DML</button>
-        <button className={level === 3 ? 'active' : ''} onClick={() => setLevel(3)}>🔍 Уровень 3: DQL</button>
+        <button className={level === 1 ? 'active' : ''} onClick={() => setLevel(1)}>🧱 {t('Уровень 1: DDL')}</button>
+        <button className={level === 2 ? 'active' : ''} onClick={() => setLevel(2)}>🚐 {t('Уровень 2: DML')}</button>
+        <button className={level === 3 ? 'active' : ''} onClick={() => setLevel(3)}>🔍 {t('Уровень 3: DQL')}</button>
       </div>
 
       {/* Экран игры */}
@@ -86,8 +115,8 @@ export default function SqlGame() {
         {/* УРОВЕНЬ 1: DDL */}
         {level === 1 && (
           <div className="level-content">
-            <h2>Режим строителя: DDL (создаём гараж для машинок)</h2>
-            <p className="task-desc">Твоя задача - управлять зданиями. Построй гараж для будущих машин!</p>
+            <h2>{ t('Режим строителя: DDL (создаём гараж для машинок)')}</h2>
+            <p className="task-desc">{t('Твоя задача - управлять зданиями. Построй гараж для будущих машин!')}</p>
             
             <div className="control-panel">
               <button className="btn-sql btn-create" onClick={handleCreate}>CREATE</button>
@@ -109,11 +138,11 @@ export default function SqlGame() {
                         <div className="door-handle right">⭐</div>
                       </>
                     )}
-                    <span className="garage-sign">ГАРАЖ</span>
+                    <span className="garage-sign">{t('ГАРАЖ')}</span>
                   </div>
                 </div>
               ) : (
-                <div className="empty-zone">Здесь пусто. Нажми CREATE, чтобы построить гараж!</div>
+                <div className="empty-zone">{t('Здесь пусто. Нажми CREATE, чтобы построить гараж!')}</div>
               )}
             </div>
           </div>
@@ -122,8 +151,8 @@ export default function SqlGame() {
         {/* УРОВЕНЬ 2: DML */}
         {level === 2 && (
           <div className="level-content">
-            <h2>Режим управления: DML (управляем тем, что внутри)</h2>
-            <p className="task-desc">Гараж готов! Теперь будем командовать машинками внутри него.</p>
+            <h2>{t('Режим управления: DML (управляем тем, что внутри)')}</h2>
+            <p className="task-desc">{t('Гараж готов! Теперь будем командовать машинками внутри него.')}</p>
             
             <div className="control-panel">
               <button className="btn-sql btn-insert" disabled={!hasGarage} onClick={handleInsert}>INSERT</button>
@@ -134,7 +163,7 @@ export default function SqlGame() {
             <div className="sandbox">
               {hasGarage ? (
                 <div className="garage-interior">
-                  <h3>Внутри твоего гаража:</h3>
+                  <h3>{t('Внутри твоего гаража:')}</h3>
                   <div className="cars-grid">
                     {cars.length > 0 ? (
                       cars.map(car => (
@@ -147,12 +176,12 @@ export default function SqlGame() {
                         </div>
                       ))
                     ) : (
-                      <div className="empty-interior">Гараж пуст. Нажми INSERT, чтобы припарковать машинку!</div>
+                      <div className="empty-interior">{t('Гараж пуст. Нажми INSERT, чтобы припарковать машинку!')}</div>
                     )}
                   </div>
                 </div>
               ) : (
-                <div className="warning-zone">🛑 Ой! Сначала вернись на Уровень 1 и создай (CREATE) гараж!</div>
+                <div className="warning-zone">🛑 {t('Ой! Сначала вернись на Уровень 1 и создай (CREATE) гараж!')}</div>
               )}
             </div>
           </div>
@@ -161,21 +190,21 @@ export default function SqlGame() {
         {/* УРОВЕНЬ 3: DQL */}
         {level === 3 && (
           <div className="level-content">
-            <h2>Режим поиска: DQL (ищем объекты в гараже)</h2>
-            <p className="task-desc">Используй команду SELECT и мощный фонарик, чтобы отфильтровать нужные вещи.</p>
+            <h2>{t('Режим поиска: DQL (ищем объекты в гараже)')}</h2>
+            <p className="task-desc">{t('Используй команду SELECT и мощный фонарик, чтобы отфильтровать нужные объекты.')}</p>
             
             <div className="control-panel sql-select-panel">
               <button 
                 className={`btn-sql btn-select ${searchQuery === 'ALL' ? 'active-select' : ''}`}
                 onClick={() => setSearchQuery('ALL')}
               >
-                SELECT * FROM garage (Показать все)
+                {t('SELECT * FROM garage (Показать всё)')}
               </button>
               <button 
                 className={`btn-sql btn-select ${searchQuery === 'BLUE' ? 'active-select' : ''}`}
                 onClick={() => setSearchQuery('BLUE')}
               >
-                SELECT FROM garage WHERE color = 'синий'
+                {t("SELECT FROM garage WHERE color = 'синий'")}
               </button>
             </div>
 
@@ -199,7 +228,7 @@ export default function SqlGame() {
                   </div>
                 </div>
               ) : (
-                <div className="warning-zone">🛑 Сначала нужно построить гараж на Уровне 1!</div>
+                <div className="warning-zone">🛑 {t('Сначала нужно построить гараж на Уровне 1.')}</div>
               )}
             </div>
           </div>

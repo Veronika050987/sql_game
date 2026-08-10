@@ -7,10 +7,10 @@
   max-width: 800px;
   margin: 20px auto;
   padding: 15px;
-  background-color: #00008B;
+  background-color: #191970;
   color: #fff;
   border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  box-shadow: 0px 0px 12px 2px #00CED1;
 }
 
 /* Навигация по уровням */
@@ -294,4 +294,29 @@
   .level-tabs button {
     font-size: 12px;
   }
+}
+
+.language
+{
+    border: none;
+    border-radius: 5px;
+    background-color: #3CB371;
+    font-size: 16px; 
+    color: #F0F8FF;
+    height: 21px;
+    cursor: pointer;
+    margin: 10px;
+    margin-bottom: 20px;
+}
+.language:hover
+{
+    border: none;
+    border-radius: 5px;
+    background-color: #2E8B57;
+    font-size: 16px; 
+    color: #F0F8FF;
+    height: 21px;
+    cursor: pointer;
+    margin: 10px;
+    margin-bottom: 20px;
 }
