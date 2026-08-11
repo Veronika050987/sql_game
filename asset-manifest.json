@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/sql_game/static/css/main.b79c7658.css",
-    "main.js": "/sql_game/static/js/main.8370de08.js",
+    "main.js": "/sql_game/static/js/main.c11210d4.js",
     "static/js/453.0bb4956c.chunk.js": "/sql_game/static/js/453.0bb4956c.chunk.js",
     "index.html": "/sql_game/index.html",
     "main.b79c7658.css.map": "/sql_game/static/css/main.b79c7658.css.map",
-    "main.8370de08.js.map": "/sql_game/static/js/main.8370de08.js.map",
+    "main.c11210d4.js.map": "/sql_game/static/js/main.c11210d4.js.map",
     "453.0bb4956c.chunk.js.map": "/sql_game/static/js/453.0bb4956c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b79c7658.css",
-    "static/js/main.8370de08.js"
+    "static/js/main.c11210d4.js"
   ]
 }
