@@ -19,7 +19,8 @@ const translations = {
   "SELECT * FROM garage (Показать всё)" : "SELECT * FROM garage (Show all)",
   "SELECT FROM garage WHERE color = 'синий'" : "SELECT FROM garage WHERE color = 'blue'",
   "Используй команду SELECT и мощный фонарик, чтобы отфильтровать нужные объекты." : "Use a SELECT command and a powerful lantern to filter useful objects.",
-  "Сначала нужно построить гараж на Уровне 1." : "At first you need to build a garage on the level 1."
+  "Фонарик ничего не нашёл! (Убедись, что на 2 уровне ты добавил синие машинки)" : "The lantern found nothing. Make sure that you've added cars at level 2.",
+  "Сначала нужно построить гараж на Уровне 1." : "At first you need to build a garage at level 1."
 
 }
 
@@ -223,7 +224,7 @@ export default function SqlGame() {
                         </div>
                       ))
                     ) : (
-                      <div className="empty-interior">Фонарик ничего не нашёл! (Убедись, что на 2 уровне ты добавил синие машинки)</div>
+                      <div className="empty-interior">{t('Фонарик ничего не нашёл! (Убедись, что на 2 уровне ты добавил синие машинки)')}</div>
                     )}
                   </div>
                 </div>
