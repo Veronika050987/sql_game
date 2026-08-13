@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './SqlGame.css';
+import green_car from './img/green_car.png';
+import housik from './img/housik.png';
 
 
 const translations = {
@@ -105,9 +107,21 @@ export default function SqlGame() {
             </button>
       {/* Шапка с переключением уровней */}
       <div className="level-tabs">
-        <button className={level === 1 ? 'active' : ''} onClick={() => setLevel(1)}>🧱 {t('Уровень 1: DDL')}</button>
-        <button className={level === 2 ? 'active' : ''} onClick={() => setLevel(2)}>🚐 {t('Уровень 2: DML')}</button>
-        <button className={level === 3 ? 'active' : ''} onClick={() => setLevel(3)}>🔍 {t('Уровень 3: DQL')}</button>
+        <button className={level === 1 ? 'active' : ''} onClick={() => setLevel(1)}
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '5px', width: '100%'}}>
+          <img src={housik} width='auto' height={28} alt='house'/>  
+          {t('Уровень 1: DDL')}
+          </button>
+        <button className={level === 2 ? 'active' : ''} onClick={() => setLevel(2)}
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', width: '100%'}}>
+          <img src={green_car} width='auto' height={28} alt='car'/> 
+          {t('Уровень 2: DML')}
+          </button>
+        <button className={level === 3 ? 'active' : ''} onClick={() => setLevel(3)}
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', width: '100%'}}>
+          🔍 
+          {t('Уровень 3: DQL')}
+          </button>
       </div>
 
       {/* Экран игры */}
@@ -173,7 +187,6 @@ export default function SqlGame() {
                           <div className={`car-light right ${car.hasNewLights ? 'neon' : ''}`}></div>
                           <div className="car-wheel w1"></div>
                           <div className="car-wheel w2"></div>
-                          🚗
                         </div>
                       ))
                     ) : (
@@ -220,7 +233,6 @@ export default function SqlGame() {
                           <div className={`car-light right ${car.hasNewLights ? 'neon' : ''}`}></div>
                           <div className="car-wheel w1"></div>
                           <div className="car-wheel w2"></div>
-                          🚗
                         </div>
                       ))
                     ) : (

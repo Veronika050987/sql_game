@@ -7,7 +7,7 @@
   max-width: 800px;
   margin: 20px auto;
   padding: 15px;
-  background-color: #191970;
+  background-color: #000080;
   color: #fff;
   border-radius: 16px;
   box-shadow: 0px 0px 12px 2px #00CED1;
@@ -252,8 +252,10 @@
 
 /* Эффект UPDATE (новые неоновые фары) */
 .car-light.neon {
-  background-color: #00ffff;
-  box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+  width: 10px;
+  height: 10px;
+  background-color: #7FFFD4;
+  box-shadow: 0 0 10px #7FFFD4, 0 0 30px #7FFFD4;
 }
 
 /* Эффект SELECT фильтрации */
