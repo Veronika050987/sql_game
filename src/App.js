@@ -10,7 +10,8 @@ function App() {
       </main>
 
       <footer>
-        <p>© 2026 Изучаем SQL весело</p>
+        <p>Copyright &copy; &mdash; {new Date().getFullYear()};
+           Nika-studio</p>
       </footer>
     </div>
   );
