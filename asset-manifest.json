@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/sql_game/static/css/main.fe9072bd.css",
-    "main.js": "/sql_game/static/js/main.86a62c76.js",
+    "main.js": "/sql_game/static/js/main.2ace8562.js",
     "static/js/453.0bb4956c.chunk.js": "/sql_game/static/js/453.0bb4956c.chunk.js",
     "static/media/green_car.png": "/sql_game/static/media/green_car.62c1f10b68a608927444.png",
     "static/media/housik.png": "/sql_game/static/media/housik.92f237dae7c0ed67f77e.png",
     "index.html": "/sql_game/index.html",
     "main.fe9072bd.css.map": "/sql_game/static/css/main.fe9072bd.css.map",
-    "main.86a62c76.js.map": "/sql_game/static/js/main.86a62c76.js.map",
+    "main.2ace8562.js.map": "/sql_game/static/js/main.2ace8562.js.map",
     "453.0bb4956c.chunk.js.map": "/sql_game/static/js/453.0bb4956c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fe9072bd.css",
-    "static/js/main.86a62c76.js"
+    "static/js/main.2ace8562.js"
   ]
 }
