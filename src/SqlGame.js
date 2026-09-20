@@ -5,31 +5,102 @@ import housik from './img/housik.png';
 
 
 const translations = {
-  "Уровень 1: DDL" : "Level 1: DDL",
-  "Уровень 2: DML" : "Level 2: DML",
-  "Уровень 3: DQL" : "Level 3: DQL",
-  "Режим строителя: DDL (создаём гараж для машинок)" : "Builder mode: DDL (create cars garage)",
-  "Твоя задача - управлять зданиями. Построй гараж для будущих машин!" : "Your task is to manage the buildings. Build a garage for the future cars.",
-  "Здесь пусто. Нажми CREATE, чтобы построить гараж!" : "Empty! Push CREATE  to build a garage!",
-  "Режим управления: DML (управляем тем, что внутри)" : "Manager mode: DML (manage inside the garage)",
-  "Гараж готов! Теперь будем командовать машинками внутри него." : "The garage is ready. Now we will manage the cars inside it.",
-  "Внутри твоего гаража:" : "Inside your garage",
-  "Гараж пуст. Нажми INSERT, чтобы припарковать машинку!" : "The garage is empty. Push INSERT to park a car!",
-  "Ой! Сначала вернись на Уровень 1 и создай (CREATE) гараж!" : "Oups! Return into level 1 and create (CREATE) a garage!",
-  "Режим поиска: DQL (ищем объекты в гараже)" : "Search mode in the garage: DDL (search the objects in the garage)",
-  "ГАРАЖ" : "GARAGE",
-  "SELECT * FROM garage (Показать всё)" : "SELECT * FROM garage (Show all)",
-  "SELECT FROM garage WHERE color = 'синий'" : "SELECT FROM garage WHERE color = 'blue'",
-  "Используй команду SELECT и мощный фонарик, чтобы отфильтровать нужные объекты." : "Use a SELECT command and a powerful lantern to filter useful objects.",
-  "Фонарик ничего не нашёл! (Убедись, что на 2 уровне ты добавил синие машинки)" : "The lantern found nothing. Make sure that you've added cars at level 2.",
-  "Сначала нужно построить гараж на Уровне 1." : "At first you need to build a garage at level 1."
+  "Уровень 1: DDL" : {
+    "en" : "Level 1: DDL",
+    "fr" : "Niveau 1: DDL"
+  },
+  "Уровень 2: DML" : {
+    "en" : "Level 2: DML",
+    "fr" : "Niveau 2: DML"
+  },
+  "Уровень 3: DQL" : {
+    "en" : "Level 3: DQL",
+    "fr" : "Niveau 3: DQL"
+  },
+  "Режим строителя: DDL (создаём гараж для машинок)" : {
+    "en" : "Builder mode: DDL (create cars garage)",
+    "fr" : "Mode d'assembleur: DDL (créer l'atelier des voitures)"
+  },
+  "Твоя задача - управлять зданиями. Построй гараж для будущих машин!" : {
+    "en" : "Your task is to manage the buildings. Build a garage for the future cars.",
+    "fr" : "Ton objectif est de manager les batiments. Construis un atelier pour les voitures!"
+  },
+  "Здесь пусто. Нажми CREATE, чтобы построить гараж!" : {
+    "en" : "Empty! Push CREATE  to build a garage!",
+    "fr" : "Vide! Appuie CREATE pour construire en atelier! "
+  },
+  "Режим управления: DML (управляем тем, что внутри)" : {
+    "en" : "Manager mode: DML (manage inside the garage)",
+    "fr" : "Mode de management: DML (manage dans l'atelier)"
+  },
+  "Гараж готов! Теперь будем командовать машинками внутри него." : {
+    "en" : "The garage is ready. Now we will manage the cars inside it.",
+    "fr" : "L'atelier est prêt. Maintenant on va manager les voitures dedans."
+  },
+  "Внутри твоего гаража:" : {
+    "en" : "Inside your garage",
+    "fr" : "Dans ton atelier"
+  },
+  "Гараж пуст. Нажми INSERT, чтобы припарковать машинку!" : {
+    "en" : "The garage is empty. Push INSERT to park a car!",
+    "fr" : "L'atelier est vide. Appuie INSERT pour parquer une voiture!"
+  },
+  "Ой! Сначала вернись на Уровень 1 и создай (CREATE) гараж!" : {
+    "en" : "Oups! Return into level 1 and create (CREATE) a garage!",
+    "fr" : "Oh-la-la! Retoune au niveau 1 et crée (CREATE) un atelier!"
+  },
+  "Режим поиска: DQL (ищем объекты в гараже)" : {
+    "en" : "Search mode in the garage: DDL (search the objects in the garage)",
+    "fr" : "Mode de recherche: DDL (recherche des objets dans l'atelier)"
+  },
+  "ГАРАЖ" : {
+    "en" : "GARAGE",
+    "fr" : "ATELIER"
+  },
+  "SELECT * FROM garage (Показать всё)" : {
+    "en" : "SELECT * FROM garage (Show all)",
+    "fr" : "SELECT * FROM garage (voire tout)"
+  },
+  "SELECT FROM garage WHERE color = 'синий'" : {
+    "en" : "SELECT FROM garage WHERE color = 'blue'",
+    "fr" : "SELECT FROM garage WHERE color = 'bleu'"
+  },
+  "Используй команду SELECT и мощный фонарик, чтобы отфильтровать нужные объекты." : {
+    "en" : "Use a SELECT command and a powerful lantern to filter useful objects.",
+    "fr" : "Utilise la commande SELECT et une lanterne puissante pout filter les objects nécessaires."
+  },
+  "Фонарик ничего не нашёл! (Убедись, что на 2 уровне ты добавил синие машинки)" : {
+    "en" : "The lantern found nothing. Make sure that you've added cars at level 2.",
+    "fr" : "La lanterne n'a rien trouvé. Regarde si t'as ajouté des voitures bleues au niveau 2."
+  },
+  "Сначала нужно построить гараж на Уровне 1." : {
+    "en" : "At first you need to build a garage at level 1.",
+    "fr" : "D'abord il faut créer un atelier au niveau 1."
+  }
 
 }
 
 export default function SqlGame() {
-  const [isEnglish, setIsEnglish] = useState(false);
+  const [language, setLanguage] = useState('ru');
 
-  const t = (text) => (isEnglish && translations[text] ? translations[text] : text);
+  const t = (text) => {
+        if (language === 'en') return text; // Для английского возвращаем сам ключ
+        return translations[text]?.[language] || text; // Для остальных берем значение из словаря
+    };
+
+  // Функция для циклического переключения языков ru -> en -> fr -> ru
+    const toggleLanguage = () => {
+        if (language === 'ru') setLanguage('en');
+        else if (language === 'en') setLanguage('fr');
+        else setLanguage('ru');
+    };
+ 
+    // Текст для отображения текущего выбранного языка на кнопке
+    const getLanguageButtonLabel = () => {
+        if (language === 'ru') return "Русский";
+        if (language === 'en') return "English";
+        return "Français";
+    };
 
   const [level, setLevel] = useState(1); // Текущий уровень (1, 2, 3)
   
@@ -102,8 +173,8 @@ export default function SqlGame() {
 
   return (
     <div className="sql-game">
-      <button className='language' onClick={() => setIsEnglish(!isEnglish)}>
-                {isEnglish ? "Русский" : "English"}
+      <button className='language' onClick={toggleLanguage}>
+                {getLanguageButtonLabel()}
             </button>
       {/* Шапка с переключением уровней */}
       <div className="level-tabs">
