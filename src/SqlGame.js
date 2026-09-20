@@ -84,8 +84,7 @@ export default function SqlGame() {
   const [language, setLanguage] = useState('ru');
 
   const t = (text) => {
-        if (language === 'en') return text; // Для английского возвращаем сам ключ
-        return translations[text]?.[language] || text; // Для остальных берем значение из словаря
+        return translations[text]?.[language] || text;
     };
 
   // Функция для циклического переключения языков ru -> en -> fr -> ru
